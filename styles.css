@@ -353,3 +353,17 @@ template {
 /**
  * 1. All the fun goes here
  */
+img {
+  max-width: 100%;
+}
+img.logo {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.viaje {
+  width: 50%;
+  max-width: 500px;
+}
