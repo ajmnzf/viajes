@@ -353,17 +353,175 @@ template {
 /**
  * 1. All the fun goes here
  */
+ * {
+   box-sizing: border-box;
+ }
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #383838;
+  background-image: url('img/brillant.png');
+}
 img {
   max-width: 100%;
+  max-height: 100%;
 }
 img.logo {
-  width: 200px;
+  width: 130px;
   height: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+nav {
+  background-color: #fca601;
+  margin-bottom: 0;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+nav ul li {
+  color: white;
+  background-color: #fca601;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 7px;
+}
+nav ul li:last-child {
+  border-right: 1px solid white;
+}
 .viaje {
-  width: 50%;
-  max-width: 500px;
+  box-sizing: border-box;
+  align-self: flex-start;
+  flex-basis: 100%;
+  padding: 15px;
+}
+#main {
+  background-color: white;
+}
+.pad {
+  border: 1px solid #d6d6d6;
+  border-radius: 8px;
+}
+.pad img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.viaje .description {
+  padding: 15px;
+  background-color: white;
+}
+.viaje h3 {
+  border-bottom: 2px solid #fca601;
+  padding-bottom: 3px;
+}
+.container {
+  max-width: 1024px;
+  display: block;
+  margin: 0 auto 0 auto;
+}
+.container h2 {
+  border-bottom: 3px solid #fca601;
+  padding-bottom: 3px;
+  text-align: center;
+}
+.hero {
+  height: 250px;
+  background-color: #fca601;
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  padding: 0 10px;
+}
+.hero h2 {
+  color: white;
+  font-size: 2.6rem;
+}
+.hero .content {
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+}
+.hero p {
+  font-size: 1.2rem;
+  color: white;
+}
+.container .viajes {
+  display: flex;
+  flex-wrap: wrap;
+}
+img.profile-pic {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  border-color: #7a7a7a;
+  border-style: solid;
+  border-width: 1px;
+  float: left;
+}
+.testimonial {
+  clear: both;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.testimonial blockquote {
+  clear: both;
+}
+.testimonial .name {
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 15px;
+}
+footer {
+  height: 50px;
+  background-color: #fca601;
+}
+.carousel {
+  display: flex;
+  height: 250px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.carousel img {
+  flex: 0 0 auto;
+  max-width: 1000px;
+}
+span#change {
+  border-bottom: 2px solid black;
+  /* transition: opacity 0.3s; */
+}
+#change::after {
+  content: '.';
+  color: black;
+}
+.transparent {
+  opacity: 0.1;
+}
+.opaque {
+  opacity: 1;
+}
+@media only screen and (min-width: 700px) {
+  div.viaje {
+    flex-basis: 50%;
+  }
+  .carousel {
+    height: 400px;
+  }
+  .hero {
+    height: 400px;
+  }
+  .hero p {
+    font-size: 1.6rem;
+    color: white;
+  }
+  .hero h2 {
+    color: white;
+    font-size: 4rem;
+  }
 }

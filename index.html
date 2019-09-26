@@ -6,42 +6,172 @@
     <title>Reaventtours</title>
   </head>
   <body>
-    <header>
+
+    <header id="main">
       <img class="logo" src="logo-reaventtours.png" alt="logo">
       <nav>
-        <ul>
-          <li>Viajes</li>
-          <li>Contacto</li>
-          <li>Blog</li>
-          <li>Galería</li>
+        <ul class="">
+          <li class="">Viajes</li>
+          <li class="">Contacto</li>
+          <li class="">Blog</li>
+          <li class="">Galería</li>
         </ul>
       </nav>
     </header>
+
+    <div class="hero">
+      <div class="content">
+        <h2>Viaja <span id="change" class="">por México</span> <br> al mejor precio.</h2>
+        <p>Viajes desde $550 MXN</p>
+      </div>
+
+    </div>
+
     <div class="container">
-      <section>
-        <h2>Próximos viajes:</h2>
+
+      <h2>Próximos viajes</h2>
+
+      <section class="carousel">
+        <img src="img/fin-de-ano.jpg" alt="Fin de año">
+        <img src="img/party-bus.jpg" alt="Fin de año">
+        <img src="img/puebla.jpg" alt="Fin de año" style="flex: 2 0 auto;">
+        <img src="img/festival-jazz-mazunte.jpg" alt="Fin de año">
+        <img src="img/cervantino.jpg" alt="Fin de año">
+      </section>
+
+      <h2>¿Qué dicen los mochileros?</h2>
+
+      <section class="testimonials">
+        <div class="testimonial">
+          <img class="profile-pic" src="img/testimonial-1.jpg" alt="">
+          <span class="name">Juan Isai ⭐⭐⭐⭐⭐</span>
+          <blockquote>
+            el trato a la gente, ofrecen un excelente servicio y hacen que te pases un viaje increible.
+          </blockquote>
+        </div>
+        <div class="testimonial">
+          <img src="img/testimonial-2.jpg" alt="" class="profile-pic">
+          <span class="name">Yuls Rous ⭐⭐⭐⭐⭐</span>
+          <blockquote>
+            Muy buen servicio, el ambiente súper agradable de los organizadores... lo recomiendo ampliamente
+          </blockquote>
+        </div>
+        <div class="testimonial">
+          <img src="img/testimonial-3.jpg" alt="" class="profile-pic">
+          <span class="name">Lauu Mariela ⭐⭐⭐⭐</span>
+          <blockquote>
+            excelente servicio super 👌
+          </blockquote>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+
+    </footer>
+
+
+
+
+    <!--
+    <div class="container">
+      <h2>Próximos viajes:</h2>
+      <section class="viajes">
         <div class="viaje">
-          <img src="img/guanajuato.jpeg" alt="Guanajuato">
-          <h3>Viaje</h3>
+          <div class="pad"><img src="img/fin-de-ano.jpg" alt="Fin de año">
+          <div class="description"><h3>Fin de año</h3>
           <ul>
             <li>Fecha</li>
             <li>Incluye: Todo incluido</li>
             <li>Camping</li>
             <li>Transporte</li>
           </ul>
-          <span>$$$</span>
+          <span>$$$</span></div></div>
         </div>
         <div class="viaje">
-
+          <div class="pad"><img src="img/party-bus.jpg" alt="Party Bus">
+          <div class="description"><h3>Party bus</h3>
+          <ul>
+            <li>Fecha</li>
+            <li>Incluye: Todo incluido</li>
+            <li>Camping</li>
+            <li>Transporte</li>
+          </ul>
+          <span>$550</span></div></div>
         </div>
         <div class="viaje">
-
+          <div class="pad"><img src="img/puebla.jpg" alt="Puebla">
+          <div class="description"><h3>Puebla</h3>
+          <ul>
+            <li>Fecha</li>
+            <li>Incluye: Todo incluido</li>
+            <li>Camping</li>
+            <li>Transporte</li>
+          </ul>
+          <span>$990</span></div></div>
         </div>
         <div class="viaje">
-
+          <div class="pad"><img src="img/festival-jazz-mazunte.jpg" alt="Festival de Jazz en Mazunte">
+          <div class="description">
+            <h3>Mazunte</h3>
+            <ul>
+              <li>Fecha</li>
+              <li>Incluye: Todo incluido</li>
+              <li>Camping</li>
+              <li>Transporte</li>
+            </ul>
+            <span>$1650</span>
+          </div></div>
         </div>
+        <div class="viaje">
+          <div class="pad"><img src="img/cervantino.jpg" alt="Cervantino">
+          <div class="description"><h3>Cervantino</h3>
+          <ul>
+            <li>Fecha</li>
+            <li>Incluye: Todo incluido</li>
+            <li>Camping</li>
+            <li>Transporte</li>
+          </ul>
+          <span>$1200</span></div>
+        </div></div>
       </section>
+          </div>
+    -->
+    <script type="text/javascript">
+      var places = ['por México', 'a la Huasteca', 'a Oaxaca', 'a Puebla', 'a Quintana Roo', 'a la playa', 'a Pueblos Mágicos', 'a donde quieras']
+      var i = 1
+      var place
+      var span = document.getElementById('change')
 
-    </div>
+      function cycle() {
+        place = places[i]
+        i++
+        if (i == 8) {
+          i = 0
+          clearInterval(interval)
+        }
+        span.innerHTML = place
+      }
+
+      function fadeIn() {
+        span.style.opacity = 0
+        let opacity = 0
+        console.log(span.style.opacity)
+        let appear = setInterval(function() {
+          if (span.style.opacity == 1) {
+            clearInterval(appear)
+          } else {
+            opacity += 0.1
+            span.style.opacity = opacity
+          }
+        }, 50)
+      }
+
+      var interval = setInterval(function() {
+        cycle()
+        fadeIn()
+      }, 2000)
+
+    </script>
   </body>
 </html>
